@@ -1,0 +1,98 @@
+Countdown Timer App – Documentation
+The Countdown Timer App is a Python GUI application built using Tkinter.
+It allows users to set a countdown time in minutes and seconds, start the timer, pause it, reset it, and receive a sound alert when the countdown finishes.
+The app also includes:
+Quick preset buttons
+Pause & resume functionality
+Reset option
+Toggleable Dark Mode
+Cross-platform sound notification support
+====================================================================================================================
+Technologies & Libraries Used
+Library	    Purpose
+tkinter	    GUI creation
+ttk	    Modern styled widgets
+messagebox    Error and info popups
+platform	    OS detection
+winsound	    Sound alert (Windows only)
+====================================================================================================================
+Application Features
+Time Input
+Users can enter:
+Minutes
+Seconds
+Input validation ensures only positive numeric values are accepted.
+▶ Start / ⏸ Pause / 🔄 Reset
+Start: Begins the countdown
+Pause: Temporarily stops the timer
+Reset: Clears time and resets the UI
+Buttons are enabled/disabled dynamically to prevent invalid actions.
+⚡ Quick Presets
+Preset buttons allow quick time setup:
+1 Minute
+5 Minutes
+10 Minutes
+These automatically fill the input fields.
+🔔 Sound Alert
+When the countdown reaches 00:00:
+Windows → Beep sound using winsound
+Other OS → System bell sound
+A popup message notifies the user that time is up.
+🌙 Dark Mode Toggle
+Users can switch between:
+Light Mode
+Dark Mode
+Dark mode changes:
+Background color
+Text color
+Button appearance
+Improves usability in low-light environments.
+====================================================================================================================
+Class & Method Explanation
+CountdownTimer Class
+Main class that manages the entire application UI and logic.
+set_preset(minutes)
+Sets predefined minute values
+Automatically updates input fields
+start_timer()
+Reads user input+
+Converts time to seconds
+Starts the countdown loop
+Handles invalid input errors
+update_timer()
+Updates the timer every second using after()
+Displays remaining time in MM:SS format
+Triggers sound and popup when time ends
+pause_timer()
+Temporarily stops the countdown
+Allows user to resume later
+reset_timer()
+Stops the timer
+Resets time to 00:00
+Disables pause & reset buttons
+play_sound()
+Plays alert sound based on operating system
+toggle_theme()
+Switches between light and dark UI themes
+Updates background, labels, and buttons dynamically
+====================================================================================================================
+GUI Design
+Fixed window size for consistency
+Large, bold timer display
+Clear button layout
+Simple and clean interface
+User-friendly controls
+====================================================================================================================
+⚠ Error Handling
+Prevents non-numeric input
+Prevents zero or negative time
+Displays clear error messages
+Ensures safe state transitions
+====================================================================================================================
+🎯 Conclusion
+The Countdown Timer App demonstrates:
+Tkinter GUI development
+Event-driven programming
+Real-time countdown logic
+OS-specific feature handling
+Clean and user-friendly design
